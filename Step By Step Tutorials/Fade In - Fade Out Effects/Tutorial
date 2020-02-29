@@ -1,0 +1,64 @@
+Fade In - Fade Out Effects
+Beginner Level
+Final Result:
+ 
+Today we’ll see how to make objects fade out and fade in. I’ll be using the 2.81 version of Blender.
+We’re going to see a whole object disappear and reappear and part of an object. We’ll be using the following elements and techniques:
+Topics:
+1.		mix shader
+2.		transparent shader
+3.		diffuse shader
+4.		assign material
+5.		select random
+6.		add material slot
+7.		insert keyframe
+8.		duplicate keyframe
+9.		lock camera to view
+
+
+
+Steps:
+1.		Delete the default cube and save the file as Fade In – Fade Out Effects.blend.
+Go to front view.
+Add a UV sphere and duplicate it twice, each time moving the duplicate 3 units to the right along the X axis (GX 3).
+The first sphere will fade out and in completely. As far as the second sphere is concerned, only the upper half will fade out and in. In the third sphere only some random faces will fade out and in.
+ 
+2.		In the World tab change the World color to white (A). 
+Select the first sphere and add a material to it. Rename it ‘fade’ (B). Change the material to a Mix Shader (C) and set the first shader to Transparent (D) and the second one to Diffuse (E). Set the color of the Diffuse material to hex E72225 (F).
+ 
+3.		Select the second sphere. Add a material to it and rename it ‘red’ (A). This should be a diffuse material (B) and its color should be the same shade of red as the one of the fade material of the first sphere.
+ 
+4.		Select the third sphere and add the red material from the dropdown list to it.
+ 
+5.		Select the first sphere again. Under Settings set Blend Mode to Alpha Blend (A). Now you can play with the factor (B) to balance the amounts of the two shaders (transparent and diffuse). The closer the value of the factor is to 0, the more the transparent shader dominates. The closer it’s to 1, the more the diffuse shader does.
+ 
+6.		Select the middle sphere. Go to edit mode, wireframe shading (A), face select mode (B). Select the upper half of the sphere.
+ 
+7.		Click the + sign button to add a new material slot (A). Select the fade material from the dropdown menu as the second material (B) and click the Assign button to assign the fade material to the selected half of the sphere.
+Go to object mode. Now you can play with the factor again.
+ 
+8.		Select the third sphere, go to edit mode, wireframe shading, face select mode and select random faces (Select -> Select Random). By default this will select 50% of the faces, but we only need 30% of the faces to be selected. You can easily change it in the operator panel in the lower left corner.
+ 
+9.		Click the + sign button to add a new material slot (A). Select the fade material from the dropdown menu as the second material (B) and click the Assign button to assign the fade material to the selected faces.
+Go to object mode. Now you can play with the factor again.
+ 
+10.		Now we want to animate the fade effect. The parts with the fade material will be fully visible at the beginning, then they will fade out and soon after that fade in again.
+First of all, let’s change the view a bit so that it isn’t that boring front view any more. Then go to frame 1 in Timeline if necessary (A). Drag the factor value all the way up to 1 and insert a keyframe by hovering over the factor field and hitting I (B).
+ 
+11.		Go to frame 125, which is in the middle (A), set the factor to 0 and insert another keyframe (B).
+ 
+12.		Select the first keyframe in Timeline. Make sure only this keyframe is selected, which you can tell by its color. Selected keyframes are yellow and deselected ones are white. Duplicate the first keyframe (Shift+D) and drag it all the way up to frame 250. 
+ 
+13.		Go to frame 1 and play the animation.
+ 
+14.		You are now ready to render the animation. First some settings :
+In the Output Properties select an output folder where your animation will be saved (A). Change File Format to FFmpeg video (B) and under Encoding change Container to MPEG-4 (C). 
+ 
+15.		Press 0 on your numpad to go to camera view. Press N to open the Properties panel and select the View tab (A). Check Lock Camera to View.
+ 
+16.		Adjust the camera view and when done, uncheck Lock Camera to View.
+ 
+17.		Make a test render at one of the frames near the middle of Timeline (Render -> Render Image). 
+Save the file and then render the animation (Render -> Render Animation). This will take a while. You can see the progress in the upper left corner.
+ 
+
